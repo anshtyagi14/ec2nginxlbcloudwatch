@@ -63,12 +63,7 @@ $ sudo dpkg -i amazon-cloudwatch-agent.deb
 $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
 ```
 
-- Follow the CloudWatch Agent Configuration Manager prompt. Specify /var/log/nginx/access.log and /var/log/nginx/error.log for monitoring.
-- Apply the CloudWatch configuration:
-
-```console
-$ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
-```
+- Follow the CloudWatch Agent Configuration Manager prompt as below
 
 ```console
 ================================================================
@@ -253,6 +248,18 @@ Do you want to store the config in the SSM parameter store?
 default choice: [1]:
 2
 Program exits now.
+```
+
+- Apply the CloudWatch configuration:
+
+```console
+$ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
+```
+
+- Verify that the CloudWatch agent is running
+
+```console
+$ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status
 ```
 
 ### Step 5: Create a Target Group
