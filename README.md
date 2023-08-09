@@ -269,8 +269,8 @@ $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -
 1. Navigate to the EC2 dashboard in the AWS Console.
 2. On the left sidebar, under 'Load Balancing', click on 'Target Groups'.
 3. Click ‘Create target group’.
-4. Give it a name, and ensure the target type is set to ‘Instances’. Set the protocol to `HTTP` and the port to 80.
-5. Set the health check to `HTTP` on the default port and click ‘Next’
+4. Give it a name and ensure the target type is set to ‘Instances’. Set the protocol to `HTTP` and the port to 80.
+5. Set the health check to `HTTP` on the default port and click ‘Next’.
 6. Do not add instances yet and click ‘Create target group’.
 
 ### Step 6: Set up an Application Load Balancer (ALB)
