@@ -13,7 +13,7 @@
 1. Go to the IAM console in the AWS Management Console.
 2. In the navigation pane, select Roles and then Create Role.
 3. For the trusted entity type, select AWS service and choose EC2.
-4. Attach the `CloudWatchFullAccessv2` policy.
+4. Attach the 'CloudWatchFullAccessv2' policy.
 5. Name your role and create it.
 
 ### Step 2: Configure Security Groups
@@ -26,7 +26,7 @@
 4. Name it `alb-sg` and provide a description as 'ALB Security Group'.
 5. In the 'Inbound rules' tab:
 	- Click ‘Add rule’.
-	- Choose `HTTP` for Type and set the source to `0.0.0.0/0`. This means the ALB will accept HTTP traffic from anywhere.
+	- Choose 'HTTP' for Type and set the source to '0.0.0.0/0'. This means the ALB will accept HTTP traffic from anywhere.
 6. Click ‘Create security group’.
 
 ### b. EC2 Security Group:
@@ -36,8 +36,8 @@
 3. Name it `nginx-ec2-sg` and provide a description as 'EC2 Security Group for Nginx'.
 4. In the 'Inbound rules' tab:
 	- Click 'Add rule'.
-	- Choose `SSH` for Type and source as `My IP` to allow only your IP to SSH into the instance.
-	- Add another rule. Choose `HTTP` for Type and for the source, specify the security group of the ALB. This means traffic from the ALB will be allowed.
+	- Choose 'SSH' for Type and source as 'My IP' to allow only your IP to SSH into the instance.
+	- Add another rule. Choose 'HTTP' for Type and for the source, specify the security group of the ALB. This means traffic from the ALB will be allowed.
 5. Click ‘Create security group’.
 
 ### Step 3: Launch Ubuntu EC2 Instance
