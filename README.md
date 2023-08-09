@@ -20,22 +20,25 @@
 
 ### a. ALB Security Group:
 
-- Go to AWS Management Console and navigate to the EC2 dashboard.
-- On the left sidebar, under ‘Network & Security’, click ‘Security Groups’.
-- Click ‘Create security group’.
-- Name it 'alb-sg' and provide a description as 'ALB Security Group'.
-- In the ‘Inbound rules’ tab:
-- Click ‘Add rule’.
-- Choose ‘HTTP’ for Type and set the source to ‘0.0.0.0/0’. This means the ALB will accept HTTP traffic from anywhere.
-- Click ‘Create security group’.
+1. Go to AWS Management Console and navigate to the EC2 dashboard.
+2. On the left sidebar, under ‘Network & Security’, click ‘Security Groups’.
+3. Click ‘Create security group’.
+4. Name it 'alb-sg' and provide a description as 'ALB Security Group'.
+5. In the ‘Inbound rules’ tab:
+	- Click ‘Add rule’.
+	- Choose ‘HTTP’ for Type and set the source to ‘0.0.0.0/0’. This means the ALB will accept HTTP traffic from anywhere.
+6. Click ‘Create security group’.
 
 ### b. EC2 Security Group:
 
-- Click ‘Create security group’.
-- Name: nginx-ec2-sg. Description: EC2 Security Group for Nginx. Select your VPC.
-- Inbound rules:
-	- Allow SSH from My IP.
-	- Allow HTTP from the ALB's security group.
+1. Again, on the left sidebar under ‘Network & Security’, click ‘Security Groups’.
+2. Click ‘Create security group’.
+3. Name it 'nginx-ec2-sg' and provide a description as 'EC2 Security Group for Nginx'.
+4. In the ‘Inbound rules’ tab:
+	- Click ‘Add rule’.
+	- Choose ‘SSH’ for Type and source as ‘My IP’ to allow only your IP to SSH into the instance.
+	- Add another rule. Choose ‘HTTP’ for Type and for the source, specify the security group of the ALB. This means traffic from the ALB will be allowed.
+5. Click ‘Create security group’.
 
 ### Step 3: Launch Ubuntu EC2 Instance
 
