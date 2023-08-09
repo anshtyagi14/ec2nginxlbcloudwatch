@@ -55,8 +55,9 @@
 SSH into your EC2 instance and execute the following:
 
 ```console
-$ sudo apt update && sudo apt upgrade -y
-$ sudo apt install nginx -y
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install nginx
 $ wget https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
 $ sudo dpkg -i amazon-cloudwatch-agent.deb 
 $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
