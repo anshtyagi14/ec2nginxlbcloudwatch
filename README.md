@@ -13,7 +13,7 @@
 1. Go to the IAM console in the AWS Management Console.
 2. In the navigation pane, select Roles and then Create Role.
 3. For the trusted entity type, select AWS service and choose EC2.
-4. Attach the CloudWatchFullAccessv2 policy.
+4. Attach the `CloudWatchFullAccessv2` policy.
 5. Name your role and create it.
 
 ### Step 2: Configure Security Groups
@@ -24,20 +24,20 @@
 2. On the left sidebar, under ‘Network & Security’, click ‘Security Groups’.
 3. Click ‘Create security group’.
 4. Name it `alb-sg` and provide a description as 'ALB Security Group'.
-5. In the ‘Inbound rules’ tab:
+5. In the 'Inbound rules' tab:
 	- Click ‘Add rule’.
-	- Choose ‘HTTP’ for Type and set the source to ‘0.0.0.0/0’. This means the ALB will accept HTTP traffic from anywhere.
+	- Choose `HTTP` for Type and set the source to `0.0.0.0/0`. This means the ALB will accept HTTP traffic from anywhere.
 6. Click ‘Create security group’.
 
 ### b. EC2 Security Group:
 
 1. Again, on the left sidebar under ‘Network & Security’, click ‘Security Groups’.
 2. Click ‘Create security group’.
-3. Name it 'nginx-ec2-sg' and provide a description as 'EC2 Security Group for Nginx'.
-4. In the ‘Inbound rules’ tab:
-	- Click ‘Add rule’.
-	- Choose ‘SSH’ for Type and source as ‘My IP’ to allow only your IP to SSH into the instance.
-	- Add another rule. Choose ‘HTTP’ for Type and for the source, specify the security group of the ALB. This means traffic from the ALB will be allowed.
+3. Name it `nginx-ec2-sg` and provide a description as 'EC2 Security Group for Nginx'.
+4. In the 'Inbound rules' tab:
+	- Click 'Add rule'.
+	- Choose `SSH` for Type and source as `My IP` to allow only your IP to SSH into the instance.
+	- Add another rule. Choose `HTTP` for Type and for the source, specify the security group of the ALB. This means traffic from the ALB will be allowed.
 5. Click ‘Create security group’.
 
 ### Step 3: Launch Ubuntu EC2 Instance
@@ -47,7 +47,7 @@
 3. Select the Ubuntu Server AMI.
 4. Configure instance details, ensuring you attach the IAM role created earlier.
 5. Select or create a new key pair.
-6. Attach the nginx-ec2-sg security group.
+6. Attach the `nginx-ec2-sg` security group.
 7. Launch the instance.
 
 ### Step 4: Set Up NGINX and CloudWatch on the EC2 Instance
@@ -265,10 +265,10 @@ $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -
 ### Step 5: Create a Target Group
 
 1. Navigate to the EC2 dashboard in the AWS Console.
-2. On the left sidebar, under ‘Load Balancing’, click on ‘Target Groups’.
+2. On the left sidebar, under 'Load Balancing', click on 'Target Groups'.
 3. Click ‘Create target group’.
-4. Give it a name, and ensure the target type is set to ‘Instances’. Set the protocol to ‘HTTP’ and the port to 80.
-5. Set the health check to ‘HTTP’ on the default port and click ‘Next’
+4. Give it a name, and ensure the target type is set to ‘Instances’. Set the protocol to `HTTP` and the port to 80.
+5. Set the health check to `HTTP` on the default port and click ‘Next’
 6. Do not add instances yet and click ‘Create target group’.
 
 ### Step 6: Set up an Application Load Balancer (ALB)
