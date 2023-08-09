@@ -70,6 +70,151 @@ $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizar
 $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
 ```
 
+```console
+================================================================
+= Welcome to the Amazon CloudWatch Agent Configuration Manager =
+=                                                              =
+= CloudWatch Agent allows you to collect metrics and logs from =
+= your host and send them to CloudWatch. Additional CloudWatch =
+= charges may apply.                                           =
+================================================================
+```
+
+```console
+On which OS are you planning to use the agent?
+1. linux
+2. windows
+3. darwin
+default choice: [1]:
+1
+```
+
+```console
+Trying to fetch the default region based on ec2 metadata...
+Are you using EC2 or On-Premises hosts?
+1. EC2
+2. On-Premises
+default choice: [1]:
+1
+```
+
+Which user are you planning to run the agent?
+1. root
+2. cwagent
+3. others
+default choice: [1]:
+1
+
+Do you want to turn on StatsD daemon?
+1. yes
+2. no
+default choice: [1]:
+2
+
+Do you want to monitor metrics from CollectD? WARNING: CollectD must be installed or the Agent will fail to start
+1. yes
+2. no
+default choice: [1]:
+2
+
+Do you want to monitor any host metrics? e.g. CPU, memory, etc.
+1. yes
+2. no
+default choice: [1]:
+2
+
+Do you have any existing CloudWatch Log Agent (http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html) configuration file to import for migration?
+1. yes
+2. no
+default choice: [2]:
+2
+
+Do you want to monitor any log files?
+1. yes
+2. no
+default choice: [1]:
+1
+Log file path:
+/var/log/nginx/access.log
+Log group name:
+default choice: [access.log]
+
+Log stream name:
+default choice: [{instance_id}]
+
+Log Group Retention in days
+1. -1
+2. 1
+3. 3
+...
+default choice: [1]:
+
+Do you want to specify any additional log files to monitor?
+1. yes
+2. no
+default choice: [1]:
+1
+Log file path:
+/var/log/nginx/error.log
+Log group name:
+default choice: [error.log]
+
+Log stream name:
+default choice: [{instance_id}]
+
+Log Group Retention in days
+1. -1
+2. 1
+3. 3
+...
+default choice: [1]:
+
+Do you want to specify any additional log files to monitor?
+1. yes
+2. no
+default choice: [1]:
+2
+
+Saved config file to /opt/aws/amazon-cloudwatch-agent/bin/config.json successfully.
+Current config as follows:
+{
+        "agent": {
+                "run_as_user": "root"
+        },
+        "logs": {
+                "logs_collected": {
+                        "files": {
+                                "collect_list": [
+                                        {
+                                                "file_path": "/var/log/nginx/access.log",
+                                                "log_group_name": "access.log",
+                                                "log_stream_name": "{instance_id}",
+                                                "retention_in_days": -1
+                                        },
+                                        {
+                                                "file_path": "/var/log/nginx/error.log",
+                                                "log_group_name": "error.log",
+                                                "log_stream_name": "{instance_id}",
+                                                "retention_in_days": -1
+                                        }
+                                ]
+                        }
+                }
+        }
+}
+
+Please check the above content of the config.
+The config file is also located at /opt/aws/amazon-cloudwatch-agent/bin/config.json.
+Edit it manually if needed.
+
+Do you want to store the config in the SSM parameter store?
+1. yes
+2. no
+default choice: [1]:
+2
+Program exits now.
+
+
 ### Step 5: Create a Target Group
 
 1. Navigate to the EC2 dashboard in the AWS Console.
