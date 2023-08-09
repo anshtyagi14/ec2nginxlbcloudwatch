@@ -65,7 +65,7 @@ $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizar
 
 - Follow the CloudWatch Agent Configuration Manager prompt as below
 
-```console
+```
 ================================================================
 = Welcome to the Amazon CloudWatch Agent Configuration Manager =
 =                                                              =
