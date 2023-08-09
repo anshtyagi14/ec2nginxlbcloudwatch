@@ -302,3 +302,35 @@ $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -
 3. Look under Logs to find and explore your log group metrics for NGINX.
 
 Now, you've successfully set up an EC2 instance with NGINX, configured an Application Load Balancer to distribute incoming traffic, and set up monitoring using CloudWatch.
+
+### Extra
+
+```
+Setting the Agent to Start on Boot
+If you want to ensure that the CloudWatch agent starts automatically when the EC2 instance boots, you can use systemd.
+
+Create a systemd service file:
+
+sudo nano /etc/systemd/system/cloudwatch-agent.service
+
+Add the following content:
+
+[Unit]
+Description=CloudWatch Agent
+
+[Service]
+ExecStart=/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+Save and close the file.
+
+Then enable and start the service:
+sudo systemctl enable cloudwatch-agent
+sudo systemctl start cloudwatch-agent
+
+The CloudWatch agent should now be set to start on boot.
+
+```
