@@ -89,19 +89,13 @@ $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch
 6. In the ‘Listeners and routing’ step, select the target group we created earlier.
 7. Review and create the load balancer.
 
-### Step 5: Set Up the Application Load Balancer
-
-1. Go to the EC2 Dashboard and select Load Balancers.
-2. Click Create Load Balancer and choose Application Load Balancer.
-3. Configure the ALB settings and attach the alb-sg security group.
-4. Configure the routing to point to a new target group. Do not add instances yet.
-5. Complete the creation of the ALB.
-
-### Step 6: Register EC2 Instance to the Target Group
-1. Navigate to Target Groups under Load Balancers.
-2. Select the target group created in the previous step.
-3. Under the Targets tab, click Edit.
-4. Add the EC2 instance. Ensure that you select the same availability zone as your EC2 instance and ALB.
+### Step 7: Register EC2 Instance to the Target Group
+1. Wait until the ALB provisioning completes and becomes active.
+2. Again, on the left sidebar, under ‘Load Balancing’, click on ‘Target Groups’.
+3. Navigate to Target Groups under Load Balancers.
+4. Select the target group created in the previous step.
+5. Under the Targets tab, click Register targets.
+6. Select the earlier created EC2 instance, click on 'Include as pending below' and click on 'Register pending targets'
 
 ### Step 7: Access NGINX via the Application Load Balancer
 
