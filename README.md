@@ -23,7 +23,7 @@
 1. Go to AWS Management Console and navigate to the EC2 dashboard.
 2. On the left sidebar, under ‘Network & Security’, click ‘Security Groups’.
 3. Click ‘Create security group’.
-4. Name it 'alb-sg' and provide a description as 'ALB Security Group'.
+4. Name it `alb-sg` and provide a description as 'ALB Security Group'.
 5. In the ‘Inbound rules’ tab:
 	- Click ‘Add rule’.
 	- Choose ‘HTTP’ for Type and set the source to ‘0.0.0.0/0’. This means the ALB will accept HTTP traffic from anywhere.
