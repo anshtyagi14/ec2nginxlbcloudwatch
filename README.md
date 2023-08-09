@@ -75,7 +75,7 @@ $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizar
 ================================================================
 ```
 
-```console
+```
 On which OS are you planning to use the agent?
 1. linux
 2. windows
@@ -84,7 +84,7 @@ default choice: [1]:
 1
 ```
 
-```console
+```
 Trying to fetch the default region based on ec2 metadata...
 Are you using EC2 or On-Premises hosts?
 1. EC2
@@ -93,7 +93,7 @@ default choice: [1]:
 1
 ```
 
-```console
+```
 Which user are you planning to run the agent?
 1. root
 2. cwagent
@@ -102,7 +102,7 @@ default choice: [1]:
 1
 ```
 
-```console
+```
 Do you want to turn on StatsD daemon?
 1. yes
 2. no
@@ -110,7 +110,7 @@ default choice: [1]:
 2
 ```
 
-```console
+```
 Do you want to monitor metrics from CollectD? WARNING: CollectD must be installed or the Agent will fail to start
 1. yes
 2. no
@@ -118,7 +118,7 @@ default choice: [1]:
 2
 ```
 
-```console
+```
 Do you want to monitor any host metrics? e.g. CPU, memory, etc.
 1. yes
 2. no
@@ -126,7 +126,7 @@ default choice: [1]:
 2
 ```
 
-```console
+```
 Do you have any existing CloudWatch Log Agent (http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html) configuration file to import for migration?
 1. yes
 2. no
@@ -134,7 +134,7 @@ default choice: [2]:
 2
 ```
 
-```console
+```
 Do you want to monitor any log files?
 1. yes
 2. no
@@ -142,22 +142,22 @@ default choice: [1]:
 1
 ```
 
-```console
+```
 Log file path:
 /var/log/nginx/access.log
 ```
 
-```console
+```
 Log group name:
 default choice: [access.log]
 ```
 
-```console
+```
 Log stream name:
 default choice: [{instance_id}]
 ```
 
-```console
+```
 Log Group Retention in days
 1. -1
 2. 1
@@ -167,7 +167,7 @@ default choice: [1]:
 1
 ```
 
-```console
+```
 Do you want to specify any additional log files to monitor?
 1. yes
 2. no
@@ -175,22 +175,22 @@ default choice: [1]:
 1
 ```
 
-```console
+```
 Log file path:
 /var/log/nginx/error.log
 ```
 
-```console
+```
 Log group name:
 default choice: [error.log]
 ```
 
-```console
+```
 Log stream name:
 default choice: [{instance_id}]
 ```
 
-```console
+```
 Log Group Retention in days
 1. -1
 2. 1
@@ -199,7 +199,7 @@ Log Group Retention in days
 default choice: [1]:
 ```
 
-```console
+```
 Do you want to specify any additional log files to monitor?
 1. yes
 2. no
@@ -207,7 +207,7 @@ default choice: [1]:
 2
 ```
 
-```console
+```
 Saved config file to /opt/aws/amazon-cloudwatch-agent/bin/config.json successfully.
 Current config as follows:
 {
@@ -241,7 +241,7 @@ The config file is also located at /opt/aws/amazon-cloudwatch-agent/bin/config.j
 Edit it manually if needed.
 ```
 
-```console
+```
 Do you want to store the config in the SSM parameter store?
 1. yes
 2. no
