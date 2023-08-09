@@ -209,6 +209,7 @@ default choice: [1]:
 
 ```
 Saved config file to /opt/aws/amazon-cloudwatch-agent/bin/config.json successfully.
+
 Current config as follows:
 {
         "agent": {
@@ -247,6 +248,7 @@ Do you want to store the config in the SSM parameter store?
 2. no
 default choice: [1]:
 2
+
 Program exits now.
 ```
 
