@@ -79,6 +79,7 @@ $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch
 = charges may apply.                                           =
 ================================================================
 ```
+
 ```console
 On which OS are you planning to use the agent?
 1. linux
