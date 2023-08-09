@@ -79,6 +79,16 @@ $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch
 5. Set the health check to ‘HTTP’ on the default port and click ‘Next’
 6. Do not add instances yet and click ‘Create target group’.
 
+### Step 6: Set up an Application Load Balancer (ALB)
+
+1. On the EC2 dashboard, select ‘Load Balancers’ from the sidebar.
+2. Click on ‘Create Load Balancer’.
+3. Choose ‘Application Load Balancer’ and click ‘Create’.
+4. In the ‘Network mapping’ step, select at least two Availability Zones and one must be the Availability Zones in which the EC2 instance is present.
+5. Attach the 'alb-sg' security group.
+6. In the ‘Listeners and routing’ step, select the target group we created earlier.
+7. Review and create the load balancer.
+
 ### Step 5: Set Up the Application Load Balancer
 
 1. Go to the EC2 Dashboard and select Load Balancers.
