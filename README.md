@@ -70,6 +70,15 @@ $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizar
 $ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
 ```
 
+### Step 5: Create a Target Group
+
+1. Navigate to the EC2 dashboard in the AWS Console.
+2. On the left sidebar, under ‘Load Balancing’, click on ‘Target Groups’.
+3. Click ‘Create target group’.
+4. Give it a name, and ensure the target type is set to ‘Instances’. Set the protocol to ‘HTTP’ and the port to 80.
+5. Set the health check to ‘HTTP’ on the default port and click ‘Next’
+6. Do not add instances yet and click ‘Create target group’.
+
 ### Step 5: Set Up the Application Load Balancer
 
 1. Go to the EC2 Dashboard and select Load Balancers.
