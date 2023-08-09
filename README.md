@@ -14,8 +14,7 @@
 2. In the navigation pane, select Roles and then Create Role.
 3. For the trusted entity type, select AWS service and choose EC2.
 4. Attach the CloudWatchFullAccessv2 policy.
-5. (Optional) Add tags for easier management.
-6. Name your role and create it.
+5. Name your role and create it.
 
 ### Step 2: Configure Security Groups
 
