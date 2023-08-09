@@ -98,83 +98,121 @@ default choice: [1]:
 1
 ```
 
+```console
 Which user are you planning to run the agent?
 1. root
 2. cwagent
 3. others
 default choice: [1]:
 1
+```
 
+```console
 Do you want to turn on StatsD daemon?
 1. yes
 2. no
 default choice: [1]:
 2
+```
 
+```console
 Do you want to monitor metrics from CollectD? WARNING: CollectD must be installed or the Agent will fail to start
 1. yes
 2. no
 default choice: [1]:
 2
+```
 
+```console
 Do you want to monitor any host metrics? e.g. CPU, memory, etc.
 1. yes
 2. no
 default choice: [1]:
 2
+```
 
+```console
 Do you have any existing CloudWatch Log Agent (http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html) configuration file to import for migration?
 1. yes
 2. no
 default choice: [2]:
 2
+```
 
+```console
 Do you want to monitor any log files?
 1. yes
 2. no
 default choice: [1]:
 1
+```
+
+```console
 Log file path:
 /var/log/nginx/access.log
+```
+
+```console
 Log group name:
 default choice: [access.log]
+```
 
+```console
 Log stream name:
 default choice: [{instance_id}]
+```
 
+```console
 Log Group Retention in days
 1. -1
 2. 1
 3. 3
 ...
 default choice: [1]:
+1
+```
 
+```console
 Do you want to specify any additional log files to monitor?
 1. yes
 2. no
 default choice: [1]:
 1
+```
+
+```console
 Log file path:
 /var/log/nginx/error.log
+```
+
+```console
 Log group name:
 default choice: [error.log]
+```
 
+```console
 Log stream name:
 default choice: [{instance_id}]
+```
 
+```console
 Log Group Retention in days
 1. -1
 2. 1
 3. 3
 ...
 default choice: [1]:
+```
 
+```console
 Do you want to specify any additional log files to monitor?
 1. yes
 2. no
 default choice: [1]:
 2
+```
 
+```console
 Saved config file to /opt/aws/amazon-cloudwatch-agent/bin/config.json successfully.
 Current config as follows:
 {
@@ -206,14 +244,16 @@ Current config as follows:
 Please check the above content of the config.
 The config file is also located at /opt/aws/amazon-cloudwatch-agent/bin/config.json.
 Edit it manually if needed.
+```
 
+```console
 Do you want to store the config in the SSM parameter store?
 1. yes
 2. no
 default choice: [1]:
 2
 Program exits now.
-
+```
 
 ### Step 5: Create a Target Group
 
